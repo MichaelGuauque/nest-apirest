@@ -28,6 +28,7 @@ import { UserModule } from './user/user.module';
 import { CertificationdetailModule } from './certificationdetail/certificationdetail.module';
 import { CommentModule } from './comment/comment.module';
 import { ExperienceModule } from './experience/experience.module';
+import { ProjectModule } from './project/project.module';
 
 @Module({
   imports: [
@@ -54,6 +55,7 @@ import { ExperienceModule } from './experience/experience.module';
     CertificationdetailModule,
     CommentModule,
     ExperienceModule,
+    ProjectModule,
   ],
   controllers: [
     RoleController,

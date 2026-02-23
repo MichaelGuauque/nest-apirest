@@ -10,6 +10,7 @@ import {
 import { Blog } from 'src/blog/blog';
 import { Certificationdetail } from 'src/certificationdetail/certificationdetail';
 import { Experience } from 'src/experience/experience';
+import { Project } from 'src/project/project';
 
 @Entity()
 export class User {
@@ -19,7 +20,7 @@ export class User {
   username: string;
   @Column()
   password: string;
-  @OneToOne(() => Roel, (role) => role.user)
+  @OneToOne(() => Role, (role) => role.user)
   rol: Role;
   @OneToOne(() => Profile, (profile) => profile.user)
   profile: Profile;
@@ -35,4 +36,7 @@ export class User {
 
   @OneToMany(() => Experience, (experience) => experience.user)
   experiences: Experience[];
+
+  @OneToMany(() => Project, (project) => project.user)
+  projects: Project[];
 }
