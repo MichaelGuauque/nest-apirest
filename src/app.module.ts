@@ -19,6 +19,15 @@ import { CategoryService } from './category/category.service';
 import { CategoryController } from './category/category.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { BlogModule } from './blog/blog.module';
+import { BlogdetailModule } from './blogdetail/blogdetail.module';
+import { CategoryModule } from './category/category.module';
+import { CertificationModule } from './certification/certification.module';
+import { ProfileModule } from './profile/profile.module';
+import { UserModule } from './user/user.module';
+import { CertificationdetailModule } from './certificationdetail/certificationdetail.module';
+import { CommentModule } from './comment/comment.module';
+import { ExperienceModule } from './experience/experience.module';
 
 @Module({
   imports: [
@@ -36,8 +45,37 @@ import { ConfigModule } from '@nestjs/config';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    BlogModule,
+    BlogdetailModule,
+    CategoryModule,
+    CertificationModule,
+    ProfileModule,
+    UserModule,
+    CertificationdetailModule,
+    CommentModule,
+    ExperienceModule,
   ],
-  controllers: [RoleController, UserController, ProfileController, ExperienceController, BlogController, CommentController, ProjectController, CertificationController, CategoryController],
-  providers: [RoleService, UserService, ProfileService, ExperienceService, BlogService, CommentService, ProjectService, CertificationService, CategoryService],
+  controllers: [
+    RoleController,
+    UserController,
+    ProfileController,
+    ExperienceController,
+    BlogController,
+    CommentController,
+    ProjectController,
+    CertificationController,
+    CategoryController,
+  ],
+  providers: [
+    RoleService,
+    UserService,
+    ProfileService,
+    ExperienceService,
+    BlogService,
+    CommentService,
+    ProjectService,
+    CertificationService,
+    CategoryService,
+  ],
 })
 export class AppModule {}
