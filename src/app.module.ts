@@ -29,6 +29,7 @@ import { CertificationdetailModule } from './certificationdetail/certificationde
 import { CommentModule } from './comment/comment.module';
 import { ExperienceModule } from './experience/experience.module';
 import { ProjectModule } from './project/project.module';
+import { RoleModule } from './role/role.module';
 
 @Module({
   imports: [
@@ -38,11 +39,11 @@ import { ProjectModule } from './project/project.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
+      host: process.env.DB_HOST_SF,
       port: parseInt(process.env.DB_PORT ?? '5432', 10),
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE,
+      database: process.env.DB_DATABASE_SF,
       autoLoadEntities: true,
       synchronize: true,
     }),
@@ -56,6 +57,7 @@ import { ProjectModule } from './project/project.module';
     CommentModule,
     ExperienceModule,
     ProjectModule,
+    RoleModule,
   ],
   controllers: [
     RoleController,
